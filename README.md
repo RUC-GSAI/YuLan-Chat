@@ -1,5 +1,5 @@
 <div align="center"> 
-<img src='assets/logo.png' width="50%">
+<img src='assets/logo.jpg' width="50%">
 </div>
 
 # YuLan-Chat: An Open-Source Bilingual Chatbot
@@ -42,9 +42,17 @@ Here we show several examples of both YuLan-Chat-65B and [Vicuna-13B](https://lm
 ## Evaluation
 
 We evaluate the proposed YuLan-Chat models on both English and Chinese benchmarks, where our YuLan-Chat-65B can consistently outperform existing open-source chat-based models.
-<div align="center"> 
-<img src='assets/evaluation.png' width="50%">
-</div>
+|                      | **中文Gaokao** (from AGIEval) | **英文BBH3k**（from BBH） | **Average** |
+| :--------------------: | :------------------------: | :---------------------: | :-------: |
+| **ChatGPT**              | 45.79%                   | 51.46%                | 48.63%  |
+| **Text-Davinci-003**     | 40.08%                   | 49.30%                | 44.69%  |
+| **YuLan-Chat-65B**       | 29.30%                   | 44.09%                | 36.69%  |
+| **YuLan-Chat-13B**       | 24.25%                   | 41.03%                | 32.64%  |
+| **Vicuna-13B**           | 18.95%                   | 39.97%                | 29.46%  |
+| **ChatGLM-6B**           | 25.10%                   | 30.15%                | 27.63%  |
+| **MOSS-sft-003**         | 21.44%                   | 33.35%                | 27.40%  |
+| **LLAMA-65B**            | 19.37%                   | 33.81%                | 26.59%  |
+| **LLAMA-13B**            | 18.80%                   | 29.77%                | 24.28%  |
 
 
 ### Gaokao
@@ -53,9 +61,17 @@ A Chinese benchmark from [AGIEval](https://github.com/microsoft/AGIEval).
 We extract the Chinese GAOKAO problems from it to compose the benchmark.
 Here, we show the detailed scores of all methods.
 
-<div align="center"> 
-<img src='assets/GAOKAO.png' width="50%">
-</div>
+|              | gaokao-chinese | gaokao-english | gaokao-geography | gaokao-history | gaokao-biology | gaokao-chemistry | gaokao-physics | gaokao-mathqa | gaokao-mathcloze | Avg. |
+|:--------------:|----------------|-----------------|------------------|----------------|----------------|------------------|----------------|----------------|------------------|---------|
+| **ChatGPT**      | 0.390          | 0.849           | 0.598            | 0.597          | 0.529          | 0.387            | 0.330          | 0.365          | 0.076            | 0.458   |
+| **Text-Davinci-003** | 0.439     | 0.814           | 0.533            | 0.473          | 0.405          | 0.271            | 0.220          | 0.282          | 0.170            | 0.401   |
+| **YuLan-Chat-65B** | 0.252        | 0.791           | 0.372            | 0.366          | 0.286          | 0.242            | 0.110          | 0.219          | 0.000            | 0.293   |
+| **YuLan-Chat-13B** | 0.224        | 0.601           | 0.276            | 0.255          | 0.219          | 0.300            | 0.080          | 0.211          | 0.017            | 0.243   |
+| **ChatGLM-6B**      | 0.248          | 0.556           | 0.266            | 0.319          | 0.291          | 0.232            | 0.080          | 0.268          | 0.000            | 0.251   |
+| **MOSS-sft-003**        | 0.207          | 0.379           | 0.261            | 0.230          | 0.191          | 0.261            | 0.190          | 0.211          | 0.000            | 0.214   |
+| **Vicuna-13B**   | 0.167          | 0.327           | 0.211            | 0.226          | 0.186          | 0.295            | 0.065          | 0.197          | 0.034            | 0.190   |
+| **LLAMA-65B**    | 0.183          | 0.314           | 0.216            | 0.289          | 0.167          | 0.275            | 0.020          | 0.271          | 0.009            | 0.194   |
+| **LLAMA-13B**    | 0.130          | 0.340           | 0.191            | 0.234          | 0.210          | 0.285            | 0.075          | 0.219          | 0.009            | 0.188   |
 
 ### BBH3K
 
