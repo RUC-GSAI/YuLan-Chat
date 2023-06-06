@@ -1,11 +1,14 @@
-<div align="center"> 
-<img src='assets/logo.jpg' width="50%">
+<div align=center>
+<img src="assets/logo.jpg" width="400px">
+<h1>YuLan-Chat: An Open-Source Bilingual Chatbot</h1>
+<a href="https://pypi.org/project/recbole/">
+    <img src="https://img.shields.io/badge/MIT-License-blue" alt="license">
+    <img src="https://img.shields.io/github/stars/RUC-GSAI/YuLan-IR" alt="license">
 </div>
 
-# YuLan-Chat: An Open-Source Bilingual Chatbot
 
 YuLan-Chat is a chat-based large language model that is developed by researchers in GSAI, Renmin University of China. It is developed based on fine-tuning LLaMA with high-quality English and Chinese instructions.
-YuLan-Chat can chat with users to well follow English or Chinese instructions, and can be deployed on an GPU (A800-80G or RTX3090) after quantization.
+YuLan-Chat can chat with users to well follow English or Chinese instructions, and can be deployed on an GPU (A800-80G or RTX3090) after quantization. In the future, we will also consider to further improve our instruction datasets and adopt our pre-trained better backbone.
 
 ---
 
@@ -61,17 +64,17 @@ A Chinese benchmark from [AGIEval](https://github.com/microsoft/AGIEval).
 We extract the Chinese GAOKAO problems from it to compose the benchmark.
 Here, we show the detailed scores of all methods.
 
-|              | gaokao-chinese | gaokao-english | gaokao-geography | gaokao-history | gaokao-biology | gaokao-chemistry | gaokao-physics | gaokao-mathqa | gaokao-mathcloze | Avg. |
+|              |  Avg. | gaokao-chinese | gaokao-english | gaokao-geography | gaokao-history | gaokao-biology | gaokao-chemistry | gaokao-physics | gaokao-mathqa | gaokao-mathcloze |
 |:--------------:|----------------|-----------------|------------------|----------------|----------------|------------------|----------------|----------------|------------------|---------|
-| **ChatGPT**      | 0.390          | 0.849           | 0.598            | 0.597          | 0.529          | 0.387            | 0.330          | 0.365          | 0.076            | 0.458   |
-| **Text-Davinci-003** | 0.439     | 0.814           | 0.533            | 0.473          | 0.405          | 0.271            | 0.220          | 0.282          | 0.170            | 0.401   |
-| **YuLan-Chat-65B** | 0.252        | 0.791           | 0.372            | 0.366          | 0.286          | 0.242            | 0.110          | 0.219          | 0.000            | 0.293   |
-| **YuLan-Chat-13B** | 0.224        | 0.601           | 0.276            | 0.255          | 0.219          | 0.300            | 0.080          | 0.211          | 0.017            | 0.243   |
-| **ChatGLM-6B**      | 0.248          | 0.556           | 0.266            | 0.319          | 0.291          | 0.232            | 0.080          | 0.268          | 0.000            | 0.251   |
-| **MOSS-sft-003**        | 0.207          | 0.379           | 0.261            | 0.230          | 0.191          | 0.261            | 0.190          | 0.211          | 0.000            | 0.214   |
-| **Vicuna-13B**   | 0.167          | 0.327           | 0.211            | 0.226          | 0.186          | 0.295            | 0.065          | 0.197          | 0.034            | 0.190   |
-| **LLAMA-65B**    | 0.183          | 0.314           | 0.216            | 0.289          | 0.167          | 0.275            | 0.020          | 0.271          | 0.009            | 0.194   |
-| **LLAMA-13B**    | 0.130          | 0.340           | 0.191            | 0.234          | 0.210          | 0.285            | 0.075          | 0.219          | 0.009            | 0.188   |
+| **ChatGPT**      | 0.458   | 0.390          | 0.849           | 0.598            | 0.597          | 0.529          | 0.387            | 0.330          | 0.365          | 0.076            |
+| **Text-Davinci-003** | 0.401   | 0.439     | 0.814           | 0.533            | 0.473          | 0.405          | 0.271            | 0.220          | 0.282          | 0.170            |
+| **YuLan-Chat-65B** | 0.293   | 0.252        | 0.791           | 0.372            | 0.366          | 0.286          | 0.242            | 0.110          | 0.219          | 0.000            |
+| **YuLan-Chat-13B** | 0.243   | 0.224        | 0.601           | 0.276            | 0.255          | 0.219          | 0.300            | 0.080          | 0.211          | 0.017            |
+| **ChatGLM-6B**      | 0.251   | 0.248          | 0.556           | 0.266            | 0.319          | 0.291          | 0.232            | 0.080          | 0.268          | 0.000            |
+| **MOSS-sft-003**        | 0.214   | 0.207          | 0.379           | 0.261            | 0.230          | 0.191          | 0.261            | 0.190          | 0.211          | 0.000            |
+| **Vicuna-13B**   | 0.190   | 0.167          | 0.327           | 0.211            | 0.226          | 0.186          | 0.295            | 0.065          | 0.197          | 0.034            |
+| **LLAMA-65B**    | 0.194   | 0.183          | 0.314           | 0.216            | 0.289          | 0.167          | 0.275            | 0.020          | 0.271          | 0.009            |
+| **LLAMA-13B**    | 0.188   | 0.130          | 0.340           | 0.191            | 0.234          | 0.210          | 0.285            | 0.075          | 0.219          | 0.009            |
 
 ### BBH3K
 
@@ -170,7 +173,8 @@ We also provide a quantization way for efficiently deploying YuLan-Chat. After q
 ```
 python inference.py --model_path ~/pretrain-checkpoint/yulan-13b/ --load_in_8bit
 ```
-
+      
+   
 ## Acknowledgements
 Thanks developers from [Alpaca](https://lmsys.org/projects/) and [Vicuna](https://lmsys.org/projects/) for their nice open-sourced projects.
 
