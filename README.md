@@ -10,17 +10,17 @@ YuLan-Chat can chat with users to well follow English or Chinese instructions, a
 ---
 
 🛗 Quick access to the released resources of this repository:
-* Released model [weight diff](), and recovering [scripts]()
-    * [YuLan-Chat-13B](xxx)
-    * [YuLan-Chat-65B](xxx)
-* Mixed instructions [data](xxx)
-* Quantization [scripts](xxx)
+* Released model (weight diff), and recovering [scripts](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/apply_delta.py)
+    * [YuLan-Chat-13B](https://huggingface.co/RUCAIBox/YuLan-Chat-13b-delta)
+    * [YuLan-Chat-65B](https://huggingface.co/RUCAIBox/YuLan-Chat-65b-delta)
+* Inference with/without Quantization [scripts](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/inference.py)
+* High-quality Instructions Construction [Details](#instruction-construction)
 
 Also check out ours [examples](#examples) and [evaluations](#evaluation)!
 
 ## News
 
-* **[Jun. 06, 2023]** We release **YuLan-Chat** from 13B to 65B, xxxk instruction data, and the corresponding INT-8 quantization scripts. Check out the [weight diff](), [data](), and [scripts]().
+* **[Jun. 06, 2023]** We release **YuLan-Chat** from 13B to 65B, and the corresponding INT-8 quantization scripts. Check out the [weight diff](https://huggingface.co/RUCAIBox/YuLan-Chat-13b-delta), and inference [scripts](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/inference.py).
 
 ## About "YuLan"
 
@@ -28,7 +28,7 @@ YuLan (Simplified Chinese 玉兰), which represents Yulan Magnolia, is the campu
 
 ## Examples
 
-Here we show several examples of both [YuLan-Chat-65B]() and [Vicuna-13B]().
+Here we show several examples of both YuLan-Chat-65B and [Vicuna-13B](https://lmsys.org/projects/).
 
 | ![Image 1](assets/example1.png) | ![Image 2](assets/example2.png) |
 |:---------------------:|:---------------------:|
