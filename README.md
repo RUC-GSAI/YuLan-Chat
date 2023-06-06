@@ -73,18 +73,17 @@ bash testOpenAIModel.sh text-davinci-003 api-key
 ```
 
 Here, we show the detailed scores of all methods.
-
-| Task | boolean_expressions | causal_judgment | date_understanding | disambiguation_qa | formal_fallacies_syllogisms_negation | geometric_shapes | hyperbaton | logical_deduction_five_objects | logical_deduction_seven_objects | logical_deduction_three_objects | movie_recommendation | navigate | penguins_in_a_table | reasoning_about_colored_objects | ruin_names | salient_translation_error_detection | snarks | sports_understanding | temporal_sequences | tracking_shuffled_objects_five_objects | tracking_shuffled_objects_seven_objects | tracking_shuffled_objects_three_objects | web_of_lies | Avg. |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |  --- |
-| ChatGPT | 0.771 | 0.537 | 0.516 | 0.622 | 0.651 | 0.140 | 0.640 | 0.446 | 0.378 | 0.699 | 0.704 | 0.646 | 0.634 | 0.598 | 0.528 | 0.400 | 0.624 | 0.827 | 0.368 | 0.183 | 0.134 | 0.232 | 0.561 | 0.515 |
-| Text-Davinci-003 | 0.783 | 0.488 | 0.576 | 0.720 | 0.602 | 0.288 | 0.552 | 0.325 | 0.451 | 0.506 | 0.608 | 0.646 | 0.524 | 0.585 | 0.540 | 0.520 | 0.365 | 0.685 | 0.512 | 0.122 | 0.195 | 0.195 | 0.549 | 0.493 |
-| YuLan-Chat-65B | 0.530 | 0.524 | 0.548 | 0.537 | 0.964 | 0.168 | 0.516 | 0.277 | 0.280 | 0.518 | 0.640 | 0.634 | 0.329 | 0.439 | 0.408 | 0.320 | 0.624 | 0.540 | 0.148 | 0.171 | 0.098 | 0.341 | 0.585 | 0.441 |
-| YuLan-Chat-13B | 0.605 | 0.628 | 0.580 | 0.419 | 0.651 | 0.000 | 0.527 | 0.395 | 0.233 | 0.465 | 0.795 | 0.643 | 0.279 | 0.419 | 0.305 | 0.200 | 0.534 | 0.601 | 0.087 | 0.119 | 0.209 | 0.326 | 0.419 | 0.410 |
-| LLAMA-65B | 0.663 | 0.451 | 0.392 | 0.146 | 0.855 | 0.100 | 0.584 | 0.313 | 0.244 | 0.434 | 0.344 | 0.378 | 0.220 | 0.341 | 0.344 | 0.052 | 0.399 | 0.464 | 0.004 | 0.171 | 0.085 | 0.317 | 0.476 | 0.338 |
-| LLAMA-13B | 0.614 | 0.402 | 0.360 | 0.146 | 0.590 | 0.016 | 0.520 | 0.229 | 0.159 | 0.253 | 0.344 | 0.378 | 0.317 | 0.159 | 0.284 | 0.240 | 0.303 | 0.492 | 0.064 | 0.171 | 0.122 | 0.366 | 0.317 | 0.298 |
-| Vicuna-13B | 0.482 | 0.524 | 0.444 | 0.646 | 0.819 | 0.076 | 0.608 | 0.277 | 0.195 | 0.361 | 0.572 | 0.439 | 0.329 | 0.512 | 0.340 | 0.224 | 0.438 | 0.641 | 0.228 | 0.159 | 0.098 | 0.354 | 0.427 | 0.400 |
-| moss | 0.482 | 0.537 | 0.300 | 0.390 | 0.855 | 0.080 | 0.468 | 0.193 | 0.207 | 0.241 | 0.340 | 0.622 | 0.207 | 0.232 | 0.204 | 0.224 | 0.416 | 0.504 | 0.108 | 0.110 | 0.159 | 0.317 | 0.476 | 0.334 |
-| chatglm | 0.530 | 0.573 | 0.304 | 0.341 | 0.602 | 0.084 | 0.412 | 0.217 | 0.195 | 0.217 | 0.124 | 0.378 | 0.329 | 0.341 | 0.180 | 0.140 | 0.438 | 0.460 | 0.288 | 0.146 | 0.110 | 0.220 | 0.305 | 0.302 |
+| Task | Avg. | boolean_expressions | causal_judgment | date_understanding | disambiguation_qa | formal_fallacies_syllogisms_negation | geometric_shapes | hyperbaton | logical_deduction_five_objects | logical_deduction_seven_objects | logical_deduction_three_objects | movie_recommendation | navigate | penguins_in_a_table | reasoning_about_colored_objects | ruin_names | salient_translation_error_detection | snarks | sports_understanding | temporal_sequences | tracking_shuffled_objects_five_objects | tracking_shuffled_objects_seven_objects | tracking_shuffled_objects_three_objects | web_of_lies |
+| :---: | ---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| **ChatGPT**          | 0.515 | 0.771 | 0.537 | 0.516 | 0.622 | 0.651 | 0.140 | 0.640 | 0.446 | 0.378 | 0.699 | 0.704 | 0.646 | 0.634 | 0.598 | 0.528 | 0.400 | 0.624 | 0.827 | 0.368 | 0.183 | 0.134 | 0.232 | 0.561 |
+| **Text-Davinci-003** | 0.493 | 0.783 | 0.488 | 0.576 | 0.720 | 0.602 | 0.288 | 0.552 | 0.325 | 0.451 | 0.506 | 0.608 | 0.646 | 0.524 | 0.585 | 0.540 | 0.520 | 0.365 | 0.685 | 0.512 | 0.122 | 0.195 | 0.195 | 0.549 |
+| **YuLan-Chat-65B**   | 0.441 | 0.530 | 0.524 | 0.548 | 0.537 | 0.964 | 0.168 | 0.516 | 0.277 | 0.280 | 0.518 | 0.640 | 0.634 | 0.329 | 0.439 | 0.408 | 0.320 | 0.624 | 0.540 | 0.148 | 0.171 | 0.098 | 0.341 | 0.585 |
+| **YuLan-Chat-13B**   | 0.410 | 0.605 | 0.628 | 0.580 | 0.419 | 0.651 | 0.000 | 0.527 | 0.395 | 0.233 | 0.465 | 0.795 | 0.643 | 0.279 | 0.419 | 0.305 | 0.200 | 0.534 | 0.601 | 0.087 | 0.119 | 0.209 | 0.326 | 0.419 |
+| **Vicuna-13B**       | 0.400 | 0.482 | 0.524 | 0.444 | 0.646 | 0.819 | 0.076 | 0.608 | 0.277 | 0.195 | 0.361 | 0.572 | 0.439 | 0.329 | 0.512 | 0.340 | 0.224 | 0.438 | 0.641 | 0.228 | 0.159 | 0.098 | 0.354 | 0.427 |
+| **MOSS-sft-003**             | 0.334 | 0.482 | 0.537 | 0.300 | 0.390 | 0.855 | 0.080 | 0.468 | 0.193 | 0.207 | 0.241 | 0.340 | 0.622 | 0.207 | 0.232 | 0.204 | 0.224 | 0.416 | 0.504 | 0.108 | 0.110 | 0.159 | 0.317 | 0.476 |
+| **ChatGLM-6B**          | 0.302 | 0.530 | 0.573 | 0.304 | 0.341 | 0.602 | 0.084 | 0.412 | 0.217 | 0.195 | 0.217 | 0.124 | 0.378 | 0.329 | 0.341 | 0.180 | 0.140 | 0.438 | 0.460 | 0.288 | 0.146 | 0.110 | 0.220 | 0.305 |
+| **LLAMA-65B**        | 0.338 | 0.663 | 0.451 | 0.392 | 0.146 | 0.855 | 0.100 | 0.584 | 0.313 | 0.244 | 0.434 | 0.344 | 0.378 | 0.220 | 0.341 | 0.344 | 0.052 | 0.399 | 0.464 | 0.004 | 0.171 | 0.085 | 0.317 | 0.476 |
+| **LLAMA-13B**        | 0.298 | 0.614 | 0.402 | 0.360 | 0.146 | 0.590 | 0.016 | 0.520 | 0.229 | 0.159 | 0.253 | 0.344 | 0.378 | 0.317 | 0.159 | 0.284 | 0.240 | 0.303 | 0.492 | 0.064 | 0.171 | 0.122 | 0.366 | 0.317 |
 
 ## Instruction construction
 
@@ -120,7 +119,7 @@ To use our YuLan-Chat, following these steps:
 conda create -n yulan python=3.10 -y
 conda activate yulan
 ```
-We suggest to install the pytorch and bitsandbytes by adapting to the cuda version, and we provide our applied versions as:
+We suggest to install the pytorch and bitsandbytes according to their official guidance for better adapting to your environment, and we provide our applied versions as reference:
 ```
 torch==1.13
 bitsandbytes==0.39.0
