@@ -107,7 +107,7 @@ Here, we show the detailed scores of all methods.
 ## Instruction construction
 
 <div align="center"> 
-<img src='assets/image.png' width="80%">
+<img src='assets/logo.png' width="80%">
 </div>
 
 ### Multi-Stage Bilingual Instructions Construction
