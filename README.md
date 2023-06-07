@@ -3,7 +3,7 @@
 <h1>YuLan-Chat: An Open-Source Bilingual Chatbot</h1>
 <a href="https://github.com/RUC-GSAI/YuLan-Chat">
     <img src="https://img.shields.io/badge/MIT-License-blue" alt="license">
-    <img src="https://img.shields.io/github/stars/RUC-GSAI/YuLan-IR" alt="license">
+    <img src="https://img.shields.io/github/stars/RUC-GSAI/YuLan-Chat" alt="license">
 </div>
 
 
