@@ -181,12 +181,12 @@ Thanks developers from [Alpaca](https://github.com/RUC-GSAI/YuLan-Chat) and [Vic
 ## License
 YuLan-Chat uses [MIT License](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/LICENSE). All data and code in this project can only be used for academic purposes.
 
-## Owners
+## Cite
 [@Kun Zhou](https://github.com/Lancelot39)
 
 ```bibtex
 @misc{YuLan-Chat,
-  author = {YuLan-Chat Developers},
+  author = {YuLan-Chat-Team},
   title = {YuLan-Chat: An Open-Source Bilingual Chatbot},
   year = {2023},
   publisher = {GitHub},
