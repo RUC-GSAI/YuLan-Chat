@@ -23,7 +23,7 @@ Also check out ours [examples](#examples) and [evaluations](#evaluation)!
 
 ## News
 
-* **[Jun. 06, 2023]** We release **YuLan-Chat** from 13B to 65B, and the corresponding INT-8 quantization scripts. Check out the [weight diff](https://huggingface.co/RUCAIBox/YuLan-Chat-13b-delta), and inference [scripts](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/inference.py).
+* **[Jun. 07, 2023]** We release **YuLan-Chat** from 13B to 65B, and the corresponding INT-8 quantization scripts. Check out the [weight diff](https://huggingface.co/RUCAIBox/YuLan-Chat-13b-delta), and inference [scripts](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/inference.py).
 
 ## About "YuLan"
 
@@ -176,7 +176,7 @@ python inference.py --model_path ~/pretrain-checkpoint/yulan-13b/ --load_in_8bit
       
    
 ## Acknowledgements
-Thanks developers from [Alpaca](https://lmsys.org/projects/) and [Vicuna](https://lmsys.org/projects/) for their nice open-sourced projects.
+Thanks developers from [Alpaca](https://github.com/RUC-GSAI/YuLan-Chat) and [Vicuna](https://lmsys.org/projects/) for their nice open-sourced projects.
 
 ## License
 YuLan-Chat uses [MIT License](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/LICENSE). All data and code in this project can only be used for academic purposes.
