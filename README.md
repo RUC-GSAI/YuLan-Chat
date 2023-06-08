@@ -182,8 +182,6 @@ Thanks developers from [Alpaca](https://github.com/RUC-GSAI/YuLan-Chat) and [Vic
 YuLan-Chat uses [MIT License](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/LICENSE). All data and code in this project can only be used for academic purposes.
 
 ## Cite
-[@Kun Zhou](https://github.com/Lancelot39)
-
 ```bibtex
 @misc{YuLan-Chat,
   author = {YuLan-Chat-Team},
