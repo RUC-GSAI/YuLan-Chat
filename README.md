@@ -29,7 +29,7 @@ YuLan-Chat models are chat-based large language models, which are developed by t
 
 ## Model Zoo
 
-Due to the license limitation, for models based on LLaMA, we only provide the weight difference with the original checkpoints; for models based on LLaMA-2, they can be used directly. Please check the [Usage](https://github.com/RUC-GSAI/YuLan-LLM/tree/main#usage) section for more details.
+Due to the license limitation, for models based on LLaMA, we only provide the weight difference with the original checkpoints; for models based on LLaMA-2, they can be used directly. Please check the [Usage](https://github.com/RUC-GSAI/YuLan-Chat/tree/main#usage) section for more details.
 
 **Limitations**: Despite our efforts to reduce potential security issues during the model's usage and encourage the generation of text that aligns with ethical and legal requirements, the language model is based on probabilistic generation, which means it may still produce unexpected outputs. For instance, the generated responses may contain biases, discrimination, or other harmful content. Please do not propagate such content. We do not assume any responsibility for any consequences resulting from the dissemination of harmful information.
 
@@ -174,7 +174,7 @@ python inference.py --model_path ~/pretrain-checkpoint/yulan-13b/ --load_in_8bit
 
 ## License
 
-YuLan-Chat uses [MIT License](https://github.com/RUC-GSAI/YuLan-LLM/blob/main/LICENSE). All data and code in this project can only be used for academic purposes.
+YuLan-Chat uses [MIT License](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/LICENSE). All data and code in this project can only be used for academic purposes.
 
 > 本项目使用MIT许可，所有的数据和代码仅供学术研究使用。
 
