@@ -1,136 +1,107 @@
 <div align=center>
-<img src="assets/logo.jpg" width="400px">
+<img src="https://github.com/RUC-GSAI/YuLan-Chat/blob/main/assets/YuLan-logo.jpg" width="400px">
 <h1>YuLan-Chat: An Open-Source Bilingual Chatbot</h1>
-<a href="https://github.com/RUC-GSAI/YuLan-Chat">
+<a href="https://github.com/RUC-GSAI/YuLan-IR">
     <img src="https://img.shields.io/badge/MIT-License-blue" alt="license">
     <img src="https://img.shields.io/github/stars/RUC-GSAI/YuLan-Chat" alt="license">
 </div>
 
+YuLan-Chat models are chat-based large language models, which are developed by the researchers in GSAI, Renmin University of China (YuLan, which represents Yulan Magnolia, is the campus flower of Renmin University of China). The newest version is developed by continually-pretraining and instruction-tuning [LLaMA-2](https://github.com/facebookresearch/llama) with high-quality English and Chinese data. The model has the following technical characteristics:
+- Due to continued pre-training on high-quality Chinese-English bilingual data, the language ability of the model has been improved.
+- To well support Chinese and longer inputs and outputs, we expand the original vocabulary with Chinese words and extend the maximum length of LLaMA-2. It can support 8k context now.
+- To well activate the bilingual instruction following capacity, we construct high-quality bilingual instructions, and perform multi-stage instruction-tuning.
 
-YuLan-Chat is a chat-based large language model that is developed by researchers in GSAI, Renmin University of China. It is developed based on fine-tuning LLaMA with high-quality English and Chinese instructions.
-YuLan-Chat can chat with users to well follow English or Chinese instructions, and can be deployed on an GPU (A800-80G or RTX3090) after quantization. In the future, we will also consider to further improve our instruction datasets and adopt our pre-trained better backbone.
+> YuLan-Chat系列模型是中国人民大学高瓴人工智能学院师生共同开发的支持聊天的大语言模型（名字"玉兰"取自中国人民大学校花）。最新版本基于LLaMA-2进行了中英文双语的继续预训练和指令微调。该版模型具有如下技术特点：
+> - 由于在高质量中英双语数据上进行了继续预训练，模型的语言能力得到提高；
+> - 为了更好的支持中文和更长的输入输出，对原版LLaMA-2的词表及长度进行了扩充，目前可支持8k上下文；
+> - 为了让模型更好地服从用户指令，构建了高质量双语指令数据集，并行了多阶段指令微调。
 
----
-
-🛗 Quick access to the released resources of this repository:
-* Released model (weight diff), and recovering [scripts](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/apply_delta.py)
-    * [YuLan-Chat-13B](https://huggingface.co/RUCAIBox/YuLan-Chat-13b-delta)
-    * [YuLan-Chat-65B](https://huggingface.co/RUCAIBox/YuLan-Chat-65b-delta)
-* Inference with/without Quantization [scripts](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/inference.py)
-* High-quality Instructions Construction [Details](#instruction-construction)
-
-Also check out ours [examples](#examples) and [evaluations](#evaluation)!
 
 ## News
 
-* **[Jun. 07, 2023]** We release **YuLan-Chat** from 13B to 65B, and the corresponding INT-8 quantization scripts. Check out the [weight diff](https://huggingface.co/RUCAIBox/YuLan-Chat-13b-delta), and inference [scripts](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/inference.py).
+* **\[Aug. 02, 2023\]** We release **YuLan-LLaMA-2-13B** and **YuLan-Chat-2-13B**. Both models have been continually pre-trained on English and Chinese corpus based on LLaMA-2, and YuLan-Chat-2-13B is the chat-based LLM based on YuLan-LLaMA-2-13B, with high-quality English and Chinese instructions.
+* **\[Aug. 02, 2023\]** We release **YuLan-Chat-1-65B-v2**, a chat-based LLM based on LLaMA. It has been continually pre-trained on English and Chinese corpus, and then instruction-tuned with high-quality English and Chinese instructions.
+* **\[Jun. 07, 2023\]** We release **YuLan-Chat-1-13B-v1** and **YuLan-Chat-1-65B-v1**, and the corresponding INT-8 quantization scripts. 
 
-## About "YuLan"
+> * **\[2023年8月2日\]** 我们发布了**YuLan-LLaMA-2-13B**和**YuLan-Chat-2-13B**两个模型，其都在LLaMA-2的基础上进行了双语继续预训练，YuLan-Chat-2-13B在YuLan-LLaMA-2-13B基础上进行了双语高质量对话指令微调。
+> * **\[2023年8月2日\]** 我们发布了**YuLan-Chat-1-65B-v2**模型，其在LLaMA-65B的基础上进行了双语继续预训练, 然后用高质量双语指令进行了微调。
+> * **\[2023年7月7日\]** 我们发布了**YuLan-Chat-1-13B-v1**和**YuLan-Chat-1-65B-v1**两个模型，以及对应的int8量化脚本。
 
-YuLan (Simplified Chinese 玉兰), which represents Yulan Magnolia, is the campus flower of Renmin University of China. In the season when Yulan Magnolia is in full bloom, students from RUC often take a leisurely stroll under the trees, chatting and enjoying the fragrance of the flowers and the pleasant atmosphere.
+## Model Zoo
 
-## Examples
+Due to the license limitation, for models based on LLaMA, we only provide the weight difference with the original checkpoints; for models based on LLaMA-2, they can be used directly. Please check the [Usage](https://github.com/RUC-GSAI/YuLan-LLM/tree/main#usage) section for more details.
 
-Here we show several examples of both YuLan-Chat-65B and [Vicuna-13B](https://lmsys.org/projects/).
+**Limitations**: Despite our efforts to reduce potential security issues during the model's usage and encourage the generation of text that aligns with ethical and legal requirements, the language model is based on probabilistic generation, which means it may still produce unexpected outputs. For instance, the generated responses may contain biases, discrimination, or other harmful content. Please do not propagate such content. We do not assume any responsibility for any consequences resulting from the dissemination of harmful information.
 
-| ![Image 1](assets/example1.png) | ![Image 2](assets/example2.png) |
-|:---------------------:|:---------------------:|
-|     **Waterphone**       |      **2018 Turing Award**      |
+> 由于许可证的限制，基于LLaMA的模型我们仅提供与官方模型的差值，基于LLaMA-2的模型可直接使用，具体请参见使用方法章节。
 
-| ![Image 1](assets/example_zh1.png) | ![Image 2](assets/example_zh2.png) |
-|:---------------------:|:---------------------:|
-|     **Zero calorie**       |      **Zibo and Texas BBQ**      |
+> **局限性**：尽管我们尝试减少模型在使用中可能出现的安全性问题，并鼓励模型生成符合道德和法律要求的文本，但由于语言模型基于概率生成的范式，模型仍然可能会产生意外的输出。 例如，生成的响应可能包含偏见、歧视或其他有害内容。 请不要传播此类内容。 我们对因传播有害信息而造成的任何后果不承担任何责任。
 
+| Model               |  Backbone  | Extended Vocab | Extended Length | Continue PT | SFT  | Released Date |
+| ------------------- | :--------: | :------------: | :-------------: | :---------: | ---- | :-----------: |
+| [YuLan-LLaMA-2-13B](https://huggingface.co/yulan-team/YuLan-LLaMA-2-13b)     | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ❌    |   2023.8.2    |
+| [YuLan-Chat-2-13B](https://huggingface.co/yulan-team/YuLan-Chat-2-13b)    | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ✅    |   2023.8.2    |
+| [YuLan-Chat-1-65B-v2](https://huggingface.co/yulan-team/YuLan-Chat-1-65B-v2-delta) | LLaMA-65B  |    ✅ 51,190    |     ❌ 2,048     |      ✅      | ✅    |   2023.8.2    |
+| [YuLan-Chat-1-13B-v1](https://huggingface.co/RUCAIBox/YuLan-Chat-13b-delta) | LLaMA-13B  |    ❌ 32,000    |     ❌ 2,048     |      ❌      |  ✅   |   2023.7.7    |
+| [YuLan-Chat-1-65B-v1](https://huggingface.co/RUCAIBox/YuLan-Chat-65b-delta) | LLaMA-65B  |    ❌ 32,000    |     ❌ 2,048     |      ❌      |  ✅   |   2023.7.7    |
 
 ## Evaluation
 
-We evaluate the proposed YuLan-Chat models on both English and Chinese benchmarks, where our YuLan-Chat-65B can consistently outperform existing open-source chat-based models.
-|                      | **中文Gaokao** (from AGIEval) | **英文BBH3k**（from BBH） | **Average** |
-| :--------------------: | :------------------------: | :---------------------: | :-------: |
-| **ChatGPT**              | 45.79%                   | 51.46%                | 48.63%  |
-| **Text-Davinci-003**     | 40.08%                   | 49.30%                | 44.69%  |
-| **YuLan-Chat-65B**       | 29.30%                   | 44.09%                | 36.69%  |
-| **YuLan-Chat-13B**       | 24.25%                   | 41.03%                | 32.64%  |
-| **Vicuna-13B**           | 18.95%                   | 39.97%                | 29.46%  |
-| **ChatGLM-6B**           | 25.10%                   | 30.15%                | 27.63%  |
-| **MOSS-sft-003**         | 21.44%                   | 33.35%                | 27.40%  |
-| **LLAMA-65B**            | 19.37%                   | 33.81%                | 26.59%  |
-| **LLAMA-13B**            | 18.80%                   | 29.77%                | 24.28%  |
+We evaluate our YuLan-Chat model on several Chinese and English benchmarks. The evaluation results are shown as follows. Some evaluations are not finished, and we will update their results as soon as possible.
 
+> 我们在中英文的一些基准测试上对YuLan-Chat进行了评价，其结果如下。有一些评估尚未完成，我们将尽快更新表格中的内容。
 
-### Gaokao
+### MMLU
 
-A Chinese benchmark from [AGIEval](https://github.com/microsoft/AGIEval).
-We extract the Chinese GAOKAO problems from it to compose the benchmark.
-Here, we show the detailed scores of all methods.
+[MMLU](https://github.com/hendrycks/test) (Massive Multitask Language Understanding) is a benchmark designed to measure knowledge acquired during pretraining by evaluating models exclusively in zero-shot and few-shot settings.
 
-|              |  Avg. | gaokao-chinese | gaokao-english | gaokao-geography | gaokao-history | gaokao-biology | gaokao-chemistry | gaokao-physics | gaokao-mathqa | gaokao-mathcloze |
-|:--------------:|----------------|-----------------|------------------|----------------|----------------|------------------|----------------|----------------|------------------|---------|
-| **ChatGPT**      | 0.458   | 0.390          | 0.849           | 0.598            | 0.597          | 0.529          | 0.387            | 0.330          | 0.365          | 0.076            |
-| **Text-Davinci-003** | 0.401   | 0.439     | 0.814           | 0.533            | 0.473          | 0.405          | 0.271            | 0.220          | 0.282          | 0.170            |
-| **YuLan-Chat-65B** | 0.293   | 0.252        | 0.791           | 0.372            | 0.366          | 0.286          | 0.242            | 0.110          | 0.219          | 0.000            |
-| **YuLan-Chat-13B** | 0.243   | 0.224        | 0.601           | 0.276            | 0.255          | 0.219          | 0.300            | 0.080          | 0.211          | 0.017            |
-| **ChatGLM-6B**      | 0.251   | 0.248          | 0.556           | 0.266            | 0.319          | 0.291          | 0.232            | 0.080          | 0.268          | 0.000            |
-| **MOSS-sft-003**        | 0.214   | 0.207          | 0.379           | 0.261            | 0.230          | 0.191          | 0.261            | 0.190          | 0.211          | 0.000            |
-| **Vicuna-13B**   | 0.190   | 0.167          | 0.327           | 0.211            | 0.226          | 0.186          | 0.295            | 0.065          | 0.197          | 0.034            |
-| **LLAMA-65B**    | 0.194   | 0.183          | 0.314           | 0.216            | 0.289          | 0.167          | 0.275            | 0.020          | 0.271          | 0.009            |
-| **LLAMA-13B**    | 0.188   | 0.130          | 0.340           | 0.191            | 0.234          | 0.210          | 0.285            | 0.075          | 0.219          | 0.009            |
+> MMLU是一个评估模型知识量的常用的英文基准测试集。
 
-### BBH3K
+| Model                             | STEM | Social Science | Humanities | Others | Avg. |
+| --------------------------------- | :--: | :------------: | :--------: | :----: | :--: |
+| YuLan-Chat-1-13B-v1               |      |                |            |        |      |
+| YuLan-Chat-1-65B-v1               |      |                |            |        |      |
+| YuLan-Chat-1-65B-v2               | 46.3 |      67.9      |    56.9    |  63.9  | 58.7 |
+| LLaMA-2-13B                       | 44.6 |      64.2      |    53.9    |  62.2  | 56.2 |
+| FlagAlpha/Llama2-Chinese-13b-Chat | 44.4 |      63.2      |    51.6    |  60.6  | 55.0 |
+| Linly-AI/Chinese-LLaMA-2-13B-hf   | 43.6 |      62.7      |    49.8    |  61.6  | 54.4 |
+| YuLan-LLaMA-2-13B                 | 42.9 |      61.5      |    50.4    |  58.6  | 53.4 |
+| YuLan-Chat-2-13B                  | 45.3 |      66.7      |    53.8    |  62.8  | 57.2 |
+### C-Eval
 
-A subset that contains 3k multiple choice questions from the English benchmark BIG-Bench Hard.
-We share our evaluation data and scripts in [yulan_test](https://github.com/RUC-GSAI/YuLan-Chat/yulan_test).
-You can use the following code for evaluation the local model via http port.
-```commandline
-cd yulan_test
-bash testLocalModel.sh YuLan-Chat http://localhost:5000
-```
-We also provide the scripts to test OpenAI models:
-```commandline
-bash testChatGPTModel.sh api-key
-bash testOpenAIModel.sh text-davinci-003 api-key
-```
+[C-Eval](https://cevalbenchmark.com/) is a comprehensive Chinese evaluation suite for foundation models.
 
-Here, we show the detailed scores of all methods.
-| Task | Avg. | boolean_expressions | causal_judgment | date_understanding | disambiguation_qa | formal_fallacies_syllogisms_negation | geometric_shapes | hyperbaton | logical_deduction_five_objects | logical_deduction_seven_objects | logical_deduction_three_objects | movie_recommendation | navigate | penguins_in_a_table | reasoning_about_colored_objects | ruin_names | salient_translation_error_detection | snarks | sports_understanding | temporal_sequences | tracking_shuffled_objects_five_objects | tracking_shuffled_objects_seven_objects | tracking_shuffled_objects_three_objects | web_of_lies |
-| :---: | ---- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| **ChatGPT**          | 0.515 | 0.771 | 0.537 | 0.516 | 0.622 | 0.651 | 0.140 | 0.640 | 0.446 | 0.378 | 0.699 | 0.704 | 0.646 | 0.634 | 0.598 | 0.528 | 0.400 | 0.624 | 0.827 | 0.368 | 0.183 | 0.134 | 0.232 | 0.561 |
-| **Text-Davinci-003** | 0.493 | 0.783 | 0.488 | 0.576 | 0.720 | 0.602 | 0.288 | 0.552 | 0.325 | 0.451 | 0.506 | 0.608 | 0.646 | 0.524 | 0.585 | 0.540 | 0.520 | 0.365 | 0.685 | 0.512 | 0.122 | 0.195 | 0.195 | 0.549 |
-| **YuLan-Chat-65B**   | 0.441 | 0.530 | 0.524 | 0.548 | 0.537 | 0.964 | 0.168 | 0.516 | 0.277 | 0.280 | 0.518 | 0.640 | 0.634 | 0.329 | 0.439 | 0.408 | 0.320 | 0.624 | 0.540 | 0.148 | 0.171 | 0.098 | 0.341 | 0.585 |
-| **YuLan-Chat-13B**   | 0.410 | 0.605 | 0.628 | 0.580 | 0.419 | 0.651 | 0.000 | 0.527 | 0.395 | 0.233 | 0.465 | 0.795 | 0.643 | 0.279 | 0.419 | 0.305 | 0.200 | 0.534 | 0.601 | 0.087 | 0.119 | 0.209 | 0.326 | 0.419 |
-| **Vicuna-13B**       | 0.400 | 0.482 | 0.524 | 0.444 | 0.646 | 0.819 | 0.076 | 0.608 | 0.277 | 0.195 | 0.361 | 0.572 | 0.439 | 0.329 | 0.512 | 0.340 | 0.224 | 0.438 | 0.641 | 0.228 | 0.159 | 0.098 | 0.354 | 0.427 |
-| **MOSS-sft-003**             | 0.334 | 0.482 | 0.537 | 0.300 | 0.390 | 0.855 | 0.080 | 0.468 | 0.193 | 0.207 | 0.241 | 0.340 | 0.622 | 0.207 | 0.232 | 0.204 | 0.224 | 0.416 | 0.504 | 0.108 | 0.110 | 0.159 | 0.317 | 0.476 |
-| **ChatGLM-6B**          | 0.302 | 0.530 | 0.573 | 0.304 | 0.341 | 0.602 | 0.084 | 0.412 | 0.217 | 0.195 | 0.217 | 0.124 | 0.378 | 0.329 | 0.341 | 0.180 | 0.140 | 0.438 | 0.460 | 0.288 | 0.146 | 0.110 | 0.220 | 0.305 |
-| **LLAMA-65B**        | 0.338 | 0.663 | 0.451 | 0.392 | 0.146 | 0.855 | 0.100 | 0.584 | 0.313 | 0.244 | 0.434 | 0.344 | 0.378 | 0.220 | 0.341 | 0.344 | 0.052 | 0.399 | 0.464 | 0.004 | 0.171 | 0.085 | 0.317 | 0.476 |
-| **LLAMA-13B**        | 0.298 | 0.614 | 0.402 | 0.360 | 0.146 | 0.590 | 0.016 | 0.520 | 0.229 | 0.159 | 0.253 | 0.344 | 0.378 | 0.317 | 0.159 | 0.284 | 0.240 | 0.303 | 0.492 | 0.064 | 0.171 | 0.122 | 0.366 | 0.317 |
+> C-Eval是一个针对基石模型综合能力的中文基准测试集。
 
-## Instruction construction
+| Model                             | STEM | Social Science | Humanities | Others | Avg. | Avg. (Hard) |
+| --------------------------------- | :--: | :------------: | :--------: | :----: | :--: | :---------: |
+| YuLan-Chat-1-13B-v1               |      |                |            |        |      |             |
+| YuLan-Chat-1-65B-v1               | 37.6 |      46.4      |    36.8    |  37.5  | 39.1 |    31.4     |
+| YuLan-Chat-1-65B-v2               | 39.9 |      55.9      |    47.7    |  43.7  | 45.4 |    31.4     |
+| LLaMA-2-13B                       | 36.9 |      43.2      |    37.6    |  36.6  | 38.2 |    32.0     |
+| FlagAlpha/Llama2-Chinese-13b-Chat | 36.8 |      44.5      |    36.3    |  36.5  | 38.1 |    30.9     |
+| Linly-AI/Chinese-LLaMA-2-13B-hf   | 33.7 |      44.8      |    36.6    |  36.5  |  37  |    27.7     |
+| YuLan-LLaMA-2-13B                 | 35.3 |      46.4      |    41.9    |  37.6  | 39.3 |    28.6     |
+| YuLan-Chat-2-13B                  | 38.9 |      49.7      |    45.0    |  40.8  | 42.6 |    32.2     |
 
-<div align="center"> 
-<img src='assets/logo.png' width="80%">
-</div>
+### AGI-Eval-Gaokao
 
-### Multi-Stage Bilingual Instructions Construction
-Existing methods often rely on the Self-Instruct method for generating instructions automatically, or directly collecting and crawling existing instruction or dialogue data. It is difficult to supervise and control the data quality under these two methods, and it is difficult to ensure the diversity and difficulty of instruction data, which may lead to the overfitting of large models to this batch of instruction data. To solve this problem, we based on existing open source instruction data, used a multi-stage instruction filtering, complexification, and diversification method based on topic control, and optimized instruction data in the following three stages: 
+[AGI-Eval](https://github.com/microsoft/AGIEval) is a human-centric benchmark specifically designed to evaluate the general abilities of foundation models in tasks pertinent to human cognition and problem-solving. We use the sub-branch Chinese-Gaokao for evaluation.
 
-#### A. Open-source Instruction Deduplication
-Even if there are currently many high-quality open-source instruction data, there are often a large number of semantically repeated or similar instructions, which can increase the degree of model overfitting to this type of data and in turn affect the model's ability to understand other instructions. To solve this problem, we propose a deduplication method based on a semantic similarity model for open-source instructions, which integrates or filters out this type of repetitive or similar instructions. Specifically, we adopt a pre-trained semantic similarity measurement model, which matches semantically similar instructions in the existing open-source instruction dataset to obtain several possible semantically repeated instruction pairs. Then, we use ChatGPT to judge the degree of semantic repetition between the two, and delete highly repeated instructions and merge semantically similar instructions into a new, more complex instruction. With this method, we can not only screen open-source instruction data but also increase its instruction complexity, resulting in a better-quality new instruction set.
+> AGI-Eval 是一个以人为中心的基准，专门设计用于评估基础模型在与人类认知和解决问题相关的任务中的一般能力。我们使用其中的"高考"分支进行评测。
 
-#### B. Instruction Diversification based on Topic Control
-Previous studies have shown that the use of more diverse instructions can enhance various capabilities of the model and prevent the model from becoming "biased". Therefore, we propose an instruction diversification method based on topic control. We first collect several themes from chat communities, including 15 categories (such as business and art) and 293 subcategories (such as bitcoin and popular music). Then, for each sub-topic, we randomly select several instructions from the existing instructions and require ChatGPT to rewrite them while being related to the topic content and retaining the original instruction content as much as possible. If a certain instruction is irrelevant to the current topic and cannot be rewritten, we will continue to sample other topics to rewrite it until it is successfully modified or the maximum number of rounds is reached. With this method, we can obtain a more diverse and evenly distributed set of new instructions for each theme without significantly changing the type distribution of the original instruction data. In addition, to achieve language and style diversity, we also translated this part of the English instruction data into Chinese.
-
-#### C. Instruction complexification
-Using more complex instruction data can help cultivate the model's ability to solve difficult tasks. Here we mainly consider two ways of complexification, namely: 1. rewriting simple instructions into complex instructions; 2. expanding single-turn instruction data into multi-turn dialogue form. The former requires ChatGPT to rewrite the current instruction from the depth and breadth of knowledge in this field using specific instructions, making it focus on more detailed knowledge points or covering other related field knowledge. The latter, based on the results of the instruction reply, further prompts ChatGPT to ask professional questions from the depth and breadth of knowledge, and this process is repeated several times until the multi-turn dialogue data reaches the preset maximum context length. With this method, information-rich and complex multi-turn dialogue data can be constructed, and using it to train large language models will greatly strengthen their understanding of specific field knowledge and complex contexts.
-
-### Details of Our Instruction Set
-Ultimately, based on the above methods, we obtained about 90k Chinese and 90k English multi-turn dialogue data respectively. By mixing them with 70k real dialogue data from ShareGPT, we obtained the final instruction fine-tuning data set, consisting of 250k instructions.
-
-## Fine-tuning LLaMA on Our Instructions
-Based on the above multi-turn instruction dataset, we fine-tuned the instruction using the LLaMA base model. We considered full parameter fine-tuning of the 13B/65B LLaMA model, and used data parallelism, ZERO, and FlashAttention technologies based on the DeepSpeed library for distributed training on two A800-80G GPU servers with 8 cards each. Considering that all of our training data is multi-turn dialogue data, we adopted a special masking mechanism similar to Vicuna's to compute the loss function, where we concatenated the multi-turn dialogue data into a long sentence and only calculated the loss value for the text part to be generated by the model. This method can reduce the computational cost caused by splitting the dialogue and ensure low training cost.
+| Model                             | Avg. | Chinese | English | Geography | History | Biology | Chemistry | Physics | Math-QA | Math-Cloze |
+| --------------------------------- | :--: | :-----: | :-----: | :-------: | :-----: | :-----: | :-------: | :-----: | :-----: | :--------: |
+| YuLan-Chat-1-13B-v1               | 24.3 |  22.4   |  60.1   |   27.6    |  25.5   |  21.9   |   30.0    |   8.0   |  21.1   |    1.7     |
+| YuLan-Chat-1-65B-v1               | 29.3 |  25.2   |  79.1   |   37.2    |  36.6   |  28.6   |   24.2    |  11.0   |  21.9   |    0.0     |
+| YuLan-Chat-1-65B-v2               | 37.9 |  31.4   |  80.4   |   50.8    |  56.6   |  33.3   |   29.0    |  32.0   |  24.4   |    0.8     |
+| LLaMA-2-13B                       | 32.7 |  27.2   |  72.2   |   36.2    |  43.0   |  26.2   |   32.4    |  30.0   |  26.2   |    0.9     |
+| FlagAlpha/Llama2-Chinese-13b-Chat | 31.6 |  26.4   |  70.6   |   35.2    |  38.7   |  28.1   |   28.0    |  29.5   |  25.6   |    2.5     |
+| Linly-AI/Chinese-LLaMA-2-13B-hf   | 31.1 |  22.8   |  74.8   |   42.2    |  37.9   |  24.3   |   28.0    |  23.0   |  26.5   |    0.0     |
+| YuLan-LLaMA-2-13B                 | 34.2 |  25.2   |  70.3   |   43.2    |  48.5   |  30.0   |   29.5    |  31.0   |  28.5   |    1.7     |
+| YuLan-Chat-2-13B                  | 39.5 |  37.0   |  85.3   |   46.7    |  51.9   |  43.8   |   38.2    |  29.0   |  23.1   |    0.9     |
 
 ## Usage
-
-To use our YuLan-Chat, following these steps:
 
 ### Environment Setting
 
@@ -139,32 +110,58 @@ conda create -n yulan python=3.10 -y
 conda activate yulan
 ```
 We suggest to install the pytorch and bitsandbytes according to their official guidance for better adapting to your environment, and we provide our applied versions as reference:
+> 我们建议根据官方手册安装pytorch和bitsandbytes，此处提供我们使用的版本作为参考。
 ```
 torch==1.13
 bitsandbytes==0.39.0
 ```
 Then, you can install other packages by the following instruction: 
+> 然后，安装其他所需的包。
 ```
 pip install -r requirements.txt
 ```
 
-### Scripts to recover model weights
+### Model Weights Recovering
 
-1. Download [LLaMA](https://github.com/facebookresearch/llama)'s original weights.
-
-2. Add our released delta parameters into the original parameters to compose the final model parameters.
+1. For YuLan-Chat-1-13B-v1, YuLan-Chat-1-65B-v1, and YuLan-Chat-1-65B-v2, as they are based on LLaMA, you should download [LLaMA](https://github.com/facebookresearch/llama)'s original weights, and then add our released delta parameters into the original parameters to compose the final model parameters.
+> 对于基于LLaMA的模型，请先下载LLaMA官方模型，然后将我们发布的参数差值合并到原始模型参数中以获得最终的参数。
 ```
 python3 apply_delta.py --base ./llama-13b/ --target ./yulan-13b/ --delta ./yulan-13b-delta/
 ```
 
-### Start Interface in Command Line
+2. For YuLan-LLaMA-2-13B and YuLan-Chat-2-13B, you can just download our released checkpoints and load their parameters via Huggingface Transformers.
+> 对于基于LLaMA-2的模型，可以直接下载我们发布的模型权重，并使用Huggingface Transformers进行使用。
 
-Inference without int8
+### Import from Huggingface Transformers
+
+As our model is trained based on LLaMA, it can be loaded in the same way as original LLaMA.
+
+> 由于我们的模型是基于LLaMA开发的，可以使用与LLaMA相同的方法加载。
+
+```Python
+>>> from transformers import LlamaTokenizer, LlamaModelForCausalLM
+>>> tokenizer = AutoTokenizer.from_pretrained("yulan-team/YuLan-Chat-2-13b")
+>>> model = AutoModelForCausalLM.from_pretrained("yulan-team/YuLan-Chat-2-13b").cuda()
+>>> model = model.eval()
+>>> input_text = "hello"
+>>> prompt = "The following is a conversation between a human and an AI assistant namely YuLan, developed by GSAI, Renmin University of China. The AI assistant gives helpful, detailed, and polite answers to the user's questions.\n[|Human|]:{}\n[|AI|]:".format(input_text)
+>>> inputs = tokenizer(prompt, return_tensors='pt', padding="longest", max_length=8192, truncation=True, return_attention_mask=True, add_special_tokens=True)
+>>> kwargs = {'temperature': 0.8, 'top_p': 0.95, "top_k": 50, "repetition_penalty": 1.1, "no_repeat_ngram_size": 64, "max_length": 8192, "pad_token_id": tokenizer.bos_token_id, "eos_token_id": tokenizer.eos_token_id}
+>>> outputs = model.generate(inputs['input_ids'].to(model.device), attention_mask=inputs['attention_mask'].to(model.device), do_sample=True, **kwargs)
+>>> print(tokenizer.batch_decode(outputs, skip_special_tokens=True)[len(prompt):])
+Hello! How can I assist you today?
+```
+
+### Inference in Command Line
+
+We provide the code for the inference of YuLan-Chat in command line.
+> 我们提供命令行预测脚本。
 ```
 python inference.py --model_path ~/pretrain-checkpoint/yulan-13b/
 ```
 
 We also provide a quantization way for efficiently deploying YuLan-Chat. After quantization, YuLan-Chat can be loaded into a single GPU.
+> 我们也提供了一种量化的方法以便于更轻量化地部署YuLan-Chat。经过量化后，模型可以被加载进单张GPU中。
 
 |YuLan-Chat (INT-8)| GPU Consumption |
 |------------------|-----------------|
@@ -173,18 +170,29 @@ We also provide a quantization way for efficiently deploying YuLan-Chat. After q
 ```
 python inference.py --model_path ~/pretrain-checkpoint/yulan-13b/ --load_in_8bit
 ```
-      
-   
-## Acknowledgements
-Thanks developers from [Alpaca](https://github.com/RUC-GSAI/YuLan-Chat) and [Vicuna](https://lmsys.org/projects/) for their nice open-sourced projects.
+
 
 ## License
-YuLan-Chat uses [MIT License](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/LICENSE). All data and code in this project can only be used for academic purposes.
 
-## Cite
-```bibtex
+YuLan-Chat uses [MIT License](https://github.com/RUC-GSAI/YuLan-LLM/blob/main/LICENSE). All data and code in this project can only be used for academic purposes.
+
+> 本项目使用MIT许可，所有的数据和代码仅供学术研究使用。
+
+## Contributors
+
+|       **Pre-training**              | **Fine-tuning**                                                 |
+|:----------------------------- |:-------------------------------------------------------------------- |
+| [Yutao Zhu](https://github.com/DaoD) (Lead), [Kelong Mao](https://github.com/kyriemao), [Wentong Chen](https://github.com/yiye3), [Yiding Sun](https://github.com/Emanual20), [Yihan Wu](https://github.com/wyh2000), [Qian Cao](https://github.com/Aman-4-Real), [Lei Zhang](https://github.com/LLily0703), [Feng Wang](https://github.com/PhealenWang), [Qiangqiang Ren](https://github.com/QiangKing)| [Kun Zhou](https://github.com/Lancelot39) (Lead), [Yushuo Chen](https://github.com/chenyushuo), [Zhipeng Chen](https://github.com/Timothy023), [Lei Wang](https://github.com/Paitesanshi), [Yupeng Hou](https://github.com/hyp1231), [Xincheng Pang](https://github.com/pangxincheng), [Junyi Li](https://github.com/turboLJY), [Yuhan Chen](https://github.com/Fiorina1212), [Shufang Xie](https://github.com/funtion) |
+
+## Reference
+
+Please kindly cite our work if it helps you.
+
+> 如果我们的项目对您有帮助，请引用我们，谢谢！
+
+```BibTeX
 @misc{YuLan-Chat,
-  author = {YuLan-Chat-Team},
+  author = {YuLan-Team},
   title = {YuLan-Chat: An Open-Source Bilingual Chatbot},
   year = {2023},
   publisher = {GitHub},
@@ -192,3 +200,8 @@ YuLan-Chat uses [MIT License](https://github.com/RUC-GSAI/YuLan-Chat/blob/main/L
   howpublished = {\url{https://github.com/RUC-GSAI/YuLan-Chat}},
 }
 ```
+
+## YuLan-1
+
+You can refer to our [original branch](https://github.com/RUC-GSAI/YuLan-Chat/tree/YuLan-Chat-1) for more detail about YuLan-Chat-1 and the instruction collection.
+> 更多关于指令构造的细节，可以参考我们之前的分支。
