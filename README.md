@@ -126,7 +126,10 @@ pip install -r requirements.txt
 1. For YuLan-Chat-1-13B-v1, YuLan-Chat-1-65B-v1, and YuLan-Chat-1-65B-v2, as they are based on LLaMA, you should download [LLaMA](https://github.com/facebookresearch/llama)'s original weights, and then add our released delta parameters into the original parameters to compose the final model parameters.
 > 对于基于LLaMA的模型，请先下载LLaMA官方模型，然后将我们发布的参数差值合并到原始模型参数中以获得最终的参数。
 ```
-python3 apply_delta.py --base ./llama-13b/ --target ./yulan-13b/ --delta ./yulan-13b-delta/
+python3 apply_delta.py \
+    --base-model-path ./llama-13b/ \
+    --tuned-model-path ./yulan-13b/ \
+    --delta-path ./yulan-13b-delta
 ```
 
 2. For YuLan-LLaMA-2-13B and YuLan-Chat-2-13B, you can just download our released checkpoints and load their parameters via Huggingface Transformers.
