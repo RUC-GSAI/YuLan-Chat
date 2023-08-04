@@ -25,7 +25,7 @@ YuLan-Chat models are chat-based large language models, which are developed by t
 
 > * **\[2023年8月2日\]** 我们发布了**YuLan-LLaMA-2-13B**和**YuLan-Chat-2-13B**两个模型，其都在LLaMA-2的基础上进行了双语继续预训练，YuLan-Chat-2-13B在YuLan-LLaMA-2-13B基础上进行了双语高质量对话指令微调。
 > * **\[2023年8月2日\]** 我们发布了**YuLan-Chat-1-65B-v2**模型，其在LLaMA-65B的基础上进行了双语继续预训练, 然后用高质量双语指令进行了微调。
-> * **\[2023年7月7日\]** 我们发布了**YuLan-Chat-1-13B-v1**和**YuLan-Chat-1-65B-v1**两个模型，以及对应的int8量化脚本。
+> * **\[2023年6月8日\]** 我们发布了**YuLan-Chat-1-13B-v1**和**YuLan-Chat-1-65B-v1**两个模型，以及对应的int8量化脚本。
 
 ## Model Zoo
 
@@ -42,8 +42,8 @@ Due to the license limitation, for models based on LLaMA, we only provide the we
 | [YuLan-Chat-2-13B](https://huggingface.co/yulan-team/YuLan-Chat-2-13b)    | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ✅    |   2023.8.2    |
 | [YuLan-LLaMA-2-13B](https://huggingface.co/yulan-team/YuLan-LLaMA-2-13b)     | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ❌    |   2023.8.2    |
 | [YuLan-Chat-1-65B-v2](https://huggingface.co/yulan-team/YuLan-Chat-1-65B-v2-delta) | LLaMA-65B  |    ✅ 51,190    |     ❌ 2,048     |      ✅      | ✅    |   2023.8.2    |
-| [YuLan-Chat-1-13B-v1](https://huggingface.co/RUCAIBox/YuLan-Chat-13b-delta) | LLaMA-13B  |    ❌ 32,000    |     ❌ 2,048     |      ❌      |  ✅   |   2023.7.7    |
-| [YuLan-Chat-1-65B-v1](https://huggingface.co/RUCAIBox/YuLan-Chat-65b-delta) | LLaMA-65B  |    ❌ 32,000    |     ❌ 2,048     |      ❌      |  ✅   |   2023.7.7    |
+| [YuLan-Chat-1-13B-v1](https://huggingface.co/RUCAIBox/YuLan-Chat-13b-delta) | LLaMA-13B  |    ❌ 32,000    |     ❌ 2,048     |      ❌      |  ✅   |   2023.6.8    |
+| [YuLan-Chat-1-65B-v1](https://huggingface.co/RUCAIBox/YuLan-Chat-65b-delta) | LLaMA-65B  |    ❌ 32,000    |     ❌ 2,048     |      ❌      |  ✅   |   2023.6.8    |
 
 ## Evaluation
 
