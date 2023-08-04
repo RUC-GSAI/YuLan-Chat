@@ -39,7 +39,7 @@ Due to the license limitation, for models based on LLaMA, we only provide the we
 
 | Model               |  Backbone  | Extended Vocab | Extended Length | Continue PT | SFT  | Released Date |
 | ------------------- | :--------: | :------------: | :-------------: | :---------: | ---- | :-----------: |
-| [YuLan-Chat-2-13B](https://huggingface.co/yulan-team/YuLan-Chat-2-13b)    | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ✅    |   2023.8.2    |
+| [YuLan-Chat-2-13B](https://huggingface.co/yulan-team/YuLan-Chat-2-13b-fp16)    | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ✅    |   2023.8.2    |
 | [YuLan-LLaMA-2-13B](https://huggingface.co/yulan-team/YuLan-LLaMA-2-13b)     | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ❌    |   2023.8.2    |
 | [YuLan-Chat-1-65B-v2](https://huggingface.co/yulan-team/YuLan-Chat-1-65B-v2-delta) | LLaMA-65B  |    ✅ 51,190    |     ❌ 2,048     |      ✅      | ✅    |   2023.8.2    |
 | [YuLan-Chat-1-13B-v1](https://huggingface.co/RUCAIBox/YuLan-Chat-13b-delta) | LLaMA-13B  |    ❌ 32,000    |     ❌ 2,048     |      ❌      |  ✅   |   2023.6.8    |
