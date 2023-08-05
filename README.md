@@ -142,9 +142,9 @@ As our model is trained based on LLaMA, it can be loaded in the same way as orig
 > 由于我们的模型是基于LLaMA开发的，可以使用与LLaMA相同的方法加载。
 
 ```Python
->>> from transformers import LlamaTokenizer, LlamaModelForCausalLM
+>>> from transformers import LlamaTokenizer, LlamaForCausalLM
 >>> tokenizer = LlamaTokenizer.from_pretrained("yulan-team/YuLan-Chat-2-13b")
->>> model = LlamaModelForCausalLM.from_pretrained("yulan-team/YuLan-Chat-2-13b").cuda()
+>>> model = LlamaForCausalLM.from_pretrained("yulan-team/YuLan-Chat-2-13b").cuda()
 >>> model = model.eval()
 >>> input_text = "hello"
 >>> prompt = "The following is a conversation between a human and an AI assistant namely YuLan, developed by GSAI, Renmin University of China. The AI assistant gives helpful, detailed, and polite answers to the user's questions.\n[|Human|]:{}\n[|AI|]:".format(input_text)
