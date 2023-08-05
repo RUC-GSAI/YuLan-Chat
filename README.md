@@ -143,8 +143,8 @@ As our model is trained based on LLaMA, it can be loaded in the same way as orig
 
 ```Python
 >>> from transformers import LlamaTokenizer, LlamaModelForCausalLM
->>> tokenizer = AutoTokenizer.from_pretrained("yulan-team/YuLan-Chat-2-13b")
->>> model = AutoModelForCausalLM.from_pretrained("yulan-team/YuLan-Chat-2-13b").cuda()
+>>> tokenizer = LlamaTokenizer.from_pretrained("yulan-team/YuLan-Chat-2-13b")
+>>> model = LlamaModelForCausalLM.from_pretrained("yulan-team/YuLan-Chat-2-13b").cuda()
 >>> model = model.eval()
 >>> input_text = "hello"
 >>> prompt = "The following is a conversation between a human and an AI assistant namely YuLan, developed by GSAI, Renmin University of China. The AI assistant gives helpful, detailed, and polite answers to the user's questions.\n[|Human|]:{}\n[|AI|]:".format(input_text)
