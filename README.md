@@ -213,7 +213,7 @@ You can refer to our [original branch](https://github.com/RUC-GSAI/YuLan-Chat/tr
 
 <a href="https://star-history.com/#RUC-GSAI/YuLan-Chat&Date">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=RUC-GSAI/YuLan-Chat&type=Date&theme=dark" />
+<!--     <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=RUC-GSAI/YuLan-Chat&type=Date&theme=dark" /> -->
     <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=RUC-GSAI/YuLan-Chat&type=Date" />
     <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=RUC-GSAI/YuLan-Chat&type=Date" />
   </picture>
