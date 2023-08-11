@@ -59,8 +59,8 @@ We evaluate our YuLan-Chat model on several Chinese and English benchmarks. The 
 
 | Model                             | STEM | Social Science | Humanities | Others | Avg. |
 | --------------------------------- | :--: | :------------: | :--------: | :----: | :--: |
-| YuLan-Chat-1-13B-v1               |      |                |            |        |      |
-| YuLan-Chat-1-65B-v1               |      |                |            |        |      |
+| YuLan-Chat-1-13B-v1               | 39.6 |      57.8      |    42.6    |  57.6  | 49.4 |
+| YuLan-Chat-1-65B-v1               | 49.2 |      71.7      |    57.7    |  66.7  | 61.3 |
 | YuLan-Chat-1-65B-v2               | 46.3 |      67.9      |    56.9    |  63.9  | 58.7 |
 | LLaMA-2-13B                       | 44.6 |      64.2      |    53.9    |  62.2  | 56.2 |
 | FlagAlpha/Llama2-Chinese-13b-Chat | 44.4 |      63.2      |    51.6    |  60.6  | 55.0 |
@@ -75,12 +75,12 @@ We evaluate our YuLan-Chat model on several Chinese and English benchmarks. The 
 
 | Model                             | STEM | Social Science | Humanities | Others | Avg. | Avg. (Hard) |
 | --------------------------------- | :--: | :------------: | :--------: | :----: | :--: | :---------: |
-| YuLan-Chat-1-13B-v1               |      |                |            |        |      |             |
-| YuLan-Chat-1-65B-v1               | 37.6 |      46.4      |    36.8    |  37.5  | 39.1 |    31.4     |
+| YuLan-Chat-1-13B-v1               | 30.2 |      37.4      |    31.9    |  30.7  | 32.0 |    25.7     |
+| YuLan-Chat-1-65B-v1               | 37.7 |      46.1      |    36.8    |  38.0  | 39.2 |    31.1     |
 | YuLan-Chat-1-65B-v2               | 39.9 |      55.9      |    47.7    |  43.7  | 45.4 |    31.4     |
 | LLaMA-2-13B                       | 36.9 |      43.2      |    37.6    |  36.6  | 38.2 |    32.0     |
 | FlagAlpha/Llama2-Chinese-13b-Chat | 36.8 |      44.5      |    36.3    |  36.5  | 38.1 |    30.9     |
-| Linly-AI/Chinese-LLaMA-2-13B-hf   | 33.7 |      44.8      |    36.6    |  36.5  |  37  |    27.7     |
+| Linly-AI/Chinese-LLaMA-2-13B-hf   | 33.7 |      44.8      |    36.6    |  36.5  | 37.0 |    27.7     |
 | YuLan-LLaMA-2-13B                 | 35.3 |      46.4      |    41.9    |  37.6  | 39.3 |    28.6     |
 | YuLan-Chat-2-13B                  | 38.9 |      49.7      |    45.0    |  40.8  | 42.6 |    32.2     |
 
@@ -92,8 +92,8 @@ We evaluate our YuLan-Chat model on several Chinese and English benchmarks. The 
 
 | Model                             | Avg. | Chinese | English | Geography | History | Biology | Chemistry | Physics | Math-QA | Math-Cloze |
 | --------------------------------- | :--: | :-----: | :-----: | :-------: | :-----: | :-----: | :-------: | :-----: | :-----: | :--------: |
-| YuLan-Chat-1-13B-v1               | 24.3 |  22.4   |  60.1   |   27.6    |  25.5   |  21.9   |   30.0    |   8.0   |  21.1   |    1.7     |
-| YuLan-Chat-1-65B-v1               | 29.3 |  25.2   |  79.1   |   37.2    |  36.6   |  28.6   |   24.2    |  11.0   |  21.9   |    0.0     |
+| YuLan-Chat-1-13B-v1               | 29.2 |  32.1   |  63.1   |   34.7    |  25.1   |  26.2   |   29.0    |  25.5   |  26.5   |    0.9     |
+| YuLan-Chat-1-65B-v1               | 34.6 |  24.8   |  82.0   |   44.2    |  44.3   |  31.4   |   30.9    |  26.0   |  27.1   |    0.9     |
 | YuLan-Chat-1-65B-v2               | 37.9 |  31.4   |  80.4   |   50.8    |  56.6   |  33.3   |   29.0    |  32.0   |  24.4   |    0.8     |
 | LLaMA-2-13B                       | 32.7 |  27.2   |  72.2   |   36.2    |  43.0   |  26.2   |   32.4    |  30.0   |  26.2   |    0.9     |
 | FlagAlpha/Llama2-Chinese-13b-Chat | 31.6 |  26.4   |  70.6   |   35.2    |  38.7   |  28.1   |   28.0    |  29.5   |  25.6   |    2.5     |
