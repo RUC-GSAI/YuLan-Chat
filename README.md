@@ -19,6 +19,7 @@ YuLan-Chat models are chat-based large language models, which are developed by t
 
 ## News
 
+* **\[Aug. 18, 2023\]** Our **YuLan-Chat-2-13B** achieves the 5th position of [OpenCompass](https://opencompass.org.cn/leaderboard-llm) benchmark!
 * **\[Aug. 02, 2023\]** We release **YuLan-LLaMA-2-13B** and **YuLan-Chat-2-13B**. Both models have been continually pre-trained on English and Chinese corpus based on LLaMA-2, and YuLan-Chat-2-13B is the chat-based LLM based on YuLan-LLaMA-2-13B, with high-quality English and Chinese instructions.
 * **\[Aug. 02, 2023\]** We release **YuLan-Chat-1-65B-v2**, a chat-based LLM based on LLaMA. It has been continually pre-trained on English and Chinese corpus, and then instruction-tuned with high-quality English and Chinese instructions.
 * **\[Jun. 08, 2023\]** We release **YuLan-Chat-1-13B-v1** and **YuLan-Chat-1-65B-v1**, and the corresponding INT-8 quantization scripts. 
