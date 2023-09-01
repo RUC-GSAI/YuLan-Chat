@@ -48,9 +48,9 @@ Due to the license limitation, for models based on LLaMA, we only provide the we
 
 ## Evaluation
 
-We evaluate our YuLan-Chat model on several Chinese and English benchmarks. The evaluation results are shown as follows. Some evaluations are not finished, and we will update their results as soon as possible.
+We evaluate our YuLan-Chat model on several Chinese and English benchmarks. The evaluation results are shown as follows.
 
-> 我们在中英文的一些基准测试上对YuLan-Chat进行了评价，其结果如下。有一些评估尚未完成，我们将尽快更新表格中的内容。
+> 我们在中英文的一些基准测试上对YuLan-Chat进行了评价，其结果如下。
 
 ### MMLU
 
