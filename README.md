@@ -6,24 +6,26 @@
     <img src="https://img.shields.io/github/stars/RUC-GSAI/YuLan-Chat" alt="license">
 </div>
 
-YuLan-Chat models are chat-based large language models, which are developed by the researchers in GSAI, Renmin University of China (YuLan, which represents Yulan Magnolia, is the campus flower of Renmin University of China). The newest version is developed by continually-pretraining and instruction-tuning [LLaMA-2](https://github.com/facebookresearch/llama) with high-quality English and Chinese data. The model has the following technical characteristics:
-- Due to continued pre-training on high-quality Chinese-English bilingual data, the language ability of the model has been improved.
-- To well support Chinese and longer inputs and outputs, we expand the original vocabulary with Chinese words and extend the maximum length of LLaMA-2. It can support 8k context now.
-- To well activate the bilingual instruction following capacity, we construct high-quality bilingual instructions, and perform multi-stage instruction-tuning.
+YuLan-Chat models are chat-based large language models, which are developed by the researchers in GSAI, Renmin University of China (YuLan, which represents Yulan Magnolia, is the campus flower of Renmin University of China). The newest version is developed by pretraining from scratch and supervised fine-tuning via curriculum learning with high-quality English and Chinese instructions and human preference data. The model has the following technical characteristics:
+- Owing to large-scale pre-training on high-quality Chinese-English bilingual data, the language ability of the model has been improved.
+- Owing to the curriculum learning strategy for human alignment, the helpfulness, honesty, and harmlessness of our model have been enhanced.
+- To well support Chinese longer inputs and outputs, we expand the vocabulary with Chinese words and the maximum input length. It can support 8k context now.
 
 > YuLan-Chat系列模型是中国人民大学高瓴人工智能学院师生共同开发的支持聊天的大语言模型（名字"玉兰"取自中国人民大学校花）。最新版本基于LLaMA-2进行了中英文双语的继续预训练和指令微调。该版模型具有如下技术特点：
-> - 由于在高质量中英双语数据上进行了继续预训练，模型的语言能力得到提高；
-> - 为了更好的支持中文和更长的输入输出，对原版LLaMA-2的词表及长度进行了扩充，目前可支持8k上下文；
-> - 为了让模型更好地服从用户指令，构建了高质量双语指令数据集，并行了多阶段指令微调。
+> - 由于在大规模中英双语数据上进行了继续预训练，模型的语言能力得到提高；
+> - 由于采用了课程学习方法进行人类对齐训练，模型在真实场景下的有用性、诚实性与无害性得到了增强；
+> - 为了更好的支持中文和更长的输入输出，模型的词表及长度得到了扩充，目前可支持8k上下文。
 
 
 ## News
 
+* **\[Apr. 12, 2024\]** We release **YuLan-Chat-12B-v3**, a chat-based LLM trained from scratch. It has been pre-trained on over 1.6TB English and Chinese corpus, and then supervised fine-tuned via curriculum learning with high-quality English and Chinese instructions and human preference data. 
 * **\[Aug. 18, 2023\]** Our **YuLan-Chat-2-13B** achieves the 5th position of [OpenCompass](https://opencompass.org.cn/leaderboard-llm) benchmark!
 * **\[Aug. 02, 2023\]** We release **YuLan-LLaMA-2-13B** and **YuLan-Chat-2-13B**. Both models have been continually pre-trained on English and Chinese corpus based on LLaMA-2, and YuLan-Chat-2-13B is the chat-based LLM based on YuLan-LLaMA-2-13B, with high-quality English and Chinese instructions.
 * **\[Aug. 02, 2023\]** We release **YuLan-Chat-1-65B-v2**, a chat-based LLM based on LLaMA. It has been continually pre-trained on English and Chinese corpus, and then instruction-tuned with high-quality English and Chinese instructions.
 * **\[Jun. 08, 2023\]** We release **YuLan-Chat-1-13B-v1** and **YuLan-Chat-1-65B-v1**, and the corresponding INT-8 quantization scripts. 
 
+> * **\[2024年4月12日\]** 我们发布了**YuLan-Chat-12B-v3**模型，其通过完全从头开始训练得到，其通过在超过1.6TB的中英文数据上进行了大规模预训练, 然后基于高质量双语指令和人类偏好数据，使用课程学习方法进行有监督微调。
 > * **\[2023年8月2日\]** 我们发布了**YuLan-LLaMA-2-13B**和**YuLan-Chat-2-13B**两个模型，其都在LLaMA-2的基础上进行了双语继续预训练，YuLan-Chat-2-13B在YuLan-LLaMA-2-13B基础上进行了双语高质量对话指令微调。
 > * **\[2023年8月2日\]** 我们发布了**YuLan-Chat-1-65B-v2**模型，其在LLaMA-65B的基础上进行了双语继续预训练, 然后用高质量双语指令进行了微调。
 > * **\[2023年6月8日\]** 我们发布了**YuLan-Chat-1-13B-v1**和**YuLan-Chat-1-65B-v1**两个模型，以及对应的int8量化脚本。
@@ -40,6 +42,7 @@ Due to the license limitation, for models based on LLaMA, we only provide the we
 
 | Model               |  Backbone  | Extended Vocab | Extended Length | Continue PT | SFT  | Released Date |
 | ------------------- | :--------: | :------------: | :-------------: | :---------: | ---- | :-----------: |
+| YuLan-Chat-12B-v3 | YuLan-LLM-12B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ✅    |   2024.4.12    |
 | [YuLan-Chat-2-13B](https://huggingface.co/yulan-team/YuLan-Chat-2-13b-fp16)    | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ✅    |   2023.8.2    |
 | [YuLan-LLaMA-2-13B](https://huggingface.co/yulan-team/YuLan-LLaMA-2-13b)     | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ❌    |   2023.8.2    |
 | [YuLan-Chat-1-65B-v2](https://huggingface.co/yulan-team/YuLan-Chat-1-65B-v2-delta) | LLaMA-65B  |    ✅ 51,190    |     ❌ 2,048     |      ✅      | ✅    |   2023.8.2    |
