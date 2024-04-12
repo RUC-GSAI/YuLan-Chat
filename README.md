@@ -6,12 +6,12 @@
     <img src="https://img.shields.io/github/stars/RUC-GSAI/YuLan-Chat" alt="license">
 </div>
 
-YuLan-Chat models are chat-based large language models, which are developed by the researchers in GSAI, Renmin University of China (YuLan, which represents Yulan Magnolia, is the campus flower of Renmin University of China). The newest version is developed by pretraining from scratch and supervised fine-tuning via curriculum learning with high-quality English and Chinese instructions and human preference data. The model has the following technical characteristics:
+YuLan-Chat models are chat-based large language models, which are developed by the researchers in GSAI, Renmin University of China (YuLan, which represents Yulan Magnolia, is the campus flower of Renmin University of China). The newest version is developed by pretraining from scratch, and supervised fine-tuning via curriculum learning with high-quality English and Chinese instructions and human preference data. The model has the following technical characteristics:
 - Owing to large-scale pre-training on high-quality Chinese-English bilingual data, the language ability of the model has been improved.
 - Owing to the curriculum learning strategy for human alignment, the helpfulness, honesty, and harmlessness of our model have been enhanced.
 - To well support Chinese longer inputs and outputs, we expand the vocabulary with Chinese words and the maximum input length. It can support 8k context now.
 
-> YuLan-Chat系列模型是中国人民大学高瓴人工智能学院师生共同开发的支持聊天的大语言模型（名字"玉兰"取自中国人民大学校花）。最新版本基于LLaMA-2进行了中英文双语的继续预训练和指令微调。该版模型具有如下技术特点：
+> YuLan-Chat系列模型是中国人民大学高瓴人工智能学院师生共同开发的支持聊天的大语言模型（名字"玉兰"取自中国人民大学校花）。最新版本从头完成了整个预训练过程，并采用课程学习技术基于中英文双语数据进行有监督微调，包括高质量指令和人类偏好数据。该版模型具有如下技术特点：
 > - 由于在大规模中英双语数据上进行了继续预训练，模型的语言能力得到提高；
 > - 由于采用了课程学习方法进行人类对齐训练，模型在真实场景下的有用性、诚实性与无害性得到了增强；
 > - 为了更好的支持中文和更长的输入输出，模型的词表及长度得到了扩充，目前可支持8k上下文。
