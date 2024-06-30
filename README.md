@@ -1,9 +1,10 @@
 <div align=center>
 <img src="https://github.com/RUC-GSAI/YuLan-Chat/blob/main/assets/YuLan-logo.jpg" width="400px">
 <h1>YuLan-Chat: An Open-Source Bilingual Chatbot</h1>
-<a href="https://github.com/RUC-GSAI/YuLan-IR">
+<a href="https://github.com/RUC-GSAI/YuLan-Chat/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/MIT-License-blue" alt="license">
-    <img src="https://img.shields.io/github/stars/RUC-GSAI/YuLan-Chat" alt="license">
+</a>
+<img src="https://img.shields.io/github/stars/RUC-GSAI/YuLan-Chat">
 </div>
 
 YuLan-Chat models are chat-based large language models, which are developed by the researchers in GSAI, Renmin University of China (YuLan, which represents Yulan Magnolia, is the campus flower of Renmin University of China). The newest version is developed by pretraining from scratch, and supervised fine-tuning via curriculum learning with high-quality English and Chinese instructions and human preference data. The model has the following technical characteristics:
