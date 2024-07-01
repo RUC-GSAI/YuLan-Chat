@@ -27,7 +27,7 @@ YuLan-Chat models are chat-based large language models, which are developed by t
 
 > * **\[2024年7月1日\]** 我们发布了**YuLan-Base-12B**，一个完全从头训练的Base模型，以及其Chat化版本**YuLan-Chat-3-12B**。我们在超过1.6TB词元的中、英文和多语数据上进行了大规模预训练，得到了Base模型，然后基于高质量双语指令和人类偏好数据，使用课程学习方法进行有监督微调，最终得到了Chat化的版本。
 > * **\[2023年8月2日\]** 我们发布了**YuLan-LLaMA-2-13B**和**YuLan-Chat-2-13B**两个模型，其都在LLaMA-2的基础上进行了双语继续预训练，YuLan-Chat-2-13B在YuLan-LLaMA-2-13B基础上进行了双语高质量对话指令微调。
-> * **\[2023年8月2日\]** 我们发布了**YuLan-Chat-1-65B-v2**模型，其在LLaMA-65B的基础上进行了双语继续预训练, 然后用高质量双语指令进行了微调。
+> * **\[2023年8月2日\]** 我们发布了**YuLan-Chat-1-65B-v2**模型，其在LLaMA-65B的基础上进行了双语继续预训练，然后用高质量双语指令进行了微调。
 > * **\[2023年6月8日\]** 我们发布了**YuLan-Chat-1-13B-v1**和**YuLan-Chat-1-65B-v1**两个模型，以及对应的int8量化脚本。
 
 ## Model Zoo
