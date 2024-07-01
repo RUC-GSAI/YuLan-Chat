@@ -1,30 +1,31 @@
 <div align=center>
 <img src="https://github.com/RUC-GSAI/YuLan-Chat/blob/main/assets/YuLan-logo.jpg" width="400px">
-<h1>YuLan-Chat: An Open-Source Bilingual Chatbot</h1>
+<h1>YuLan: An Open-Source Large Language Model</h1>
 <a href="https://github.com/RUC-GSAI/YuLan-Chat/blob/main/LICENSE"><img src="https://img.shields.io/badge/MIT-License-blue" alt="license"></a>
+<a href="https://arxiv.org/abs/2406.19853" target="_blank"><img src=https://img.shields.io/badge/arXiv-b5212f.svg?logo=arxiv></a>
 <a><img src="https://img.shields.io/github/stars/RUC-GSAI/YuLan-Chat"></a>
 </div>
 
-YuLan-Chat models are chat-based large language models, which are developed by the researchers in GSAI, Renmin University of China (YuLan, which represents Yulan Magnolia, is the campus flower of Renmin University of China). The newest version is developed by pretraining from scratch, and supervised fine-tuning via curriculum learning with high-quality English and Chinese instructions and human preference data. The model has the following technical characteristics:
-- Owing to large-scale pre-training on high-quality Chinese-English bilingual data, the language ability of the model has been improved.
+YuLan-Chat models are chat-based large language models, which are developed by the researchers in GSAI, Renmin University of China (YuLan, which represents Yulan Magnolia, is the campus flower of Renmin University of China). The newest version is developed by pre-training from scratch, and supervised fine-tuning via curriculum learning with high-quality English and Chinese instructions and human preference data. The model has the following technical characteristics:
+- Owing to large-scale pre-training on high-quality English, Chinese, and multilingual data, the language ability of the model has been improved.
 - Owing to the curriculum learning strategy for human alignment, the helpfulness, honesty, and harmlessness of our model have been enhanced.
-- To well support Chinese longer inputs and outputs, we expand the vocabulary with Chinese words and the maximum input length. It can support 8k context now.
+- To well support Chinese longer inputs and outputs, we expand the vocabulary with Chinese words and the maximum input length. It can support 4k context now.
 
 > YuLan-Chat系列模型是中国人民大学高瓴人工智能学院师生共同开发的支持聊天的大语言模型（名字"玉兰"取自中国人民大学校花）。最新版本从头完成了整个预训练过程，并采用课程学习技术基于中英文双语数据进行有监督微调，包括高质量指令和人类偏好数据。该版模型具有如下技术特点：
 > - 由于在大规模中英双语数据上进行了继续预训练，模型的语言能力得到提高；
 > - 由于采用了课程学习方法进行人类对齐训练，模型在真实场景下的有用性、诚实性与无害性得到了增强；
-> - 为了更好的支持中文和更长的输入输出，模型的词表及长度得到了扩充，目前可支持8k上下文。
+> - 为了更好的支持中文和更长的输入输出，模型的词表及长度得到了扩充，目前可支持4k上下文。
 
 
 ## News
 
-* **\[Apr. 12, 2024\]** We release **YuLan-Chat-12B-v3**, a chat-based LLM trained from scratch. It has been pre-trained on over 1.6TB English and Chinese corpus, and then supervised fine-tuned via curriculum learning with high-quality English and Chinese instructions and human preference data. 
+* **\[July. 1, 2024\]** We release **YuLan-Base-12B**, an LLM trained from scratch, and its chat-based version **YuLan-Chat-3-12B**. We pre-train the base model on over 1.6TB tokens of English, Chinese, and multilingual data, and then perform supervised fine-tuning via curriculum learning with high-quality English and Chinese instructions and human preference data to obtain the chat model. 
 * **\[Aug. 18, 2023\]** Our **YuLan-Chat-2-13B** achieves the 5th position of [OpenCompass](https://opencompass.org.cn/leaderboard-llm) benchmark!
 * **\[Aug. 02, 2023\]** We release **YuLan-LLaMA-2-13B** and **YuLan-Chat-2-13B**. Both models have been continually pre-trained on English and Chinese corpus based on LLaMA-2, and YuLan-Chat-2-13B is the chat-based LLM based on YuLan-LLaMA-2-13B, with high-quality English and Chinese instructions.
 * **\[Aug. 02, 2023\]** We release **YuLan-Chat-1-65B-v2**, a chat-based LLM based on LLaMA. It has been continually pre-trained on English and Chinese corpus, and then instruction-tuned with high-quality English and Chinese instructions.
 * **\[Jun. 08, 2023\]** We release **YuLan-Chat-1-13B-v1** and **YuLan-Chat-1-65B-v1**, and the corresponding INT-8 quantization scripts. 
 
-> * **\[2024年4月12日\]** 我们发布了**YuLan-Chat-12B-v3**模型，其通过完全从头开始训练得到，其通过在超过1.6TB的中英文数据上进行了大规模预训练, 然后基于高质量双语指令和人类偏好数据，使用课程学习方法进行有监督微调。
+> * **\[2024年7月1日\]** 我们发布了**YuLan-Base-12B**，一个完全从头训练的Base模型，以及其Chat化版本**YuLan-Chat-3-12B**。我们在超过1.6TB词元的中、英文和多语数据上进行了大规模预训练，得到了Base模型, 然后基于高质量双语指令和人类偏好数据，使用课程学习方法进行有监督微调，最终得到了Chat化的版本。
 > * **\[2023年8月2日\]** 我们发布了**YuLan-LLaMA-2-13B**和**YuLan-Chat-2-13B**两个模型，其都在LLaMA-2的基础上进行了双语继续预训练，YuLan-Chat-2-13B在YuLan-LLaMA-2-13B基础上进行了双语高质量对话指令微调。
 > * **\[2023年8月2日\]** 我们发布了**YuLan-Chat-1-65B-v2**模型，其在LLaMA-65B的基础上进行了双语继续预训练, 然后用高质量双语指令进行了微调。
 > * **\[2023年6月8日\]** 我们发布了**YuLan-Chat-1-13B-v1**和**YuLan-Chat-1-65B-v1**两个模型，以及对应的int8量化脚本。
@@ -41,7 +42,8 @@ Due to the license limitation, for models based on LLaMA, we only provide the we
 
 | Model               |  Backbone  | Extended Vocab | Extended Length | Continue PT | SFT  | Released Date |
 | ------------------- | :--------: | :------------: | :-------------: | :---------: | ---- | :-----------: |
-| YuLan-Chat-12B-v3 | YuLan-LLM-12B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ✅    |   2024.4.12    |
+| [YuLan-Base-12B](https://huggingface.co/yulan-team/YuLan-Base-12b) | YuLan-Base-12B |    ✅ 51,190    |     ✅ 4,096     |      ❌      | ❌    |   2024.7.1    |
+| [YuLan-Chat-3-12B](https://huggingface.co/yulan-team/YuLan-Chat-3-12b) | YuLan-Base-12B |    ✅ 51,190    |     ✅ 4,096     |      ❌      | ✅    |   2024.7.1    |
 | [YuLan-Chat-2-13B](https://huggingface.co/yulan-team/YuLan-Chat-2-13b-fp16)    | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ✅    |   2023.8.2    |
 | [YuLan-LLaMA-2-13B](https://huggingface.co/yulan-team/YuLan-LLaMA-2-13b)     | LLaMA2-13B |    ✅ 51,190    |     ✅ 8,192     |      ✅      | ❌    |   2023.8.2    |
 | [YuLan-Chat-1-65B-v2](https://huggingface.co/yulan-team/YuLan-Chat-1-65B-v2-delta) | LLaMA-65B  |    ✅ 51,190    |     ❌ 2,048     |      ✅      | ✅    |   2023.8.2    |
@@ -70,6 +72,8 @@ We evaluate our YuLan-Chat model on several Chinese and English benchmarks. The 
 | Linly-AI/Chinese-LLaMA-2-13B-hf   | 43.6 |      62.7      |    49.8    |  61.6  | 54.4 |
 | YuLan-LLaMA-2-13B                 | 42.9 |      61.5      |    50.4    |  58.6  | 53.4 |
 | YuLan-Chat-2-13B                  | 45.3 |      66.7      |    53.8    |  62.8  | 57.2 |
+| YuLan-Base-12B                    | 42.3 |      60.2      |    46.4    |  56.1  | 51.3 |
+| YuLan-Chat-3-12B                  | 45.5 |      64.3      |    51.8    |  61.3  | 55.7 |
 ### C-Eval
 
 [C-Eval](https://cevalbenchmark.com/) is a comprehensive Chinese evaluation suite for foundation models.
@@ -86,6 +90,8 @@ We evaluate our YuLan-Chat model on several Chinese and English benchmarks. The 
 | Linly-AI/Chinese-LLaMA-2-13B-hf   | 33.7 |      44.8      |    36.6    |  36.5  | 37.0 |    27.7     |
 | YuLan-LLaMA-2-13B                 | 35.3 |      46.4      |    41.9    |  37.6  | 39.3 |    28.6     |
 | YuLan-Chat-2-13B                  | 38.9 |      49.7      |    45.0    |  40.8  | 42.6 |    32.2     |
+| YuLan-Base-12B                    | 42.0 |      57.6      |    47.2    |  41.5  | 46.0 |    32.6     |
+| YuLan-Chat-3-12B                  | 47.0 |      61.8      |    52.9    |  44.3  | 50.5 |    37.7     |
 
 ### AGI-Eval-Gaokao
 
@@ -103,6 +109,8 @@ We evaluate our YuLan-Chat model on several Chinese and English benchmarks. The 
 | Linly-AI/Chinese-LLaMA-2-13B-hf   | 31.1 |  22.8   |  74.8   |   42.2    |  37.9   |  24.3   |   28.0    |  23.0   |  26.5   |    0.0     |
 | YuLan-LLaMA-2-13B                 | 34.2 |  25.2   |  70.3   |   43.2    |  48.5   |  30.0   |   29.5    |  31.0   |  28.5   |    1.7     |
 | YuLan-Chat-2-13B                  | 39.5 |  37.0   |  85.3   |   46.7    |  51.9   |  43.8   |   38.2    |  29.0   |  23.1   |    0.9     |
+| YuLan-Chat-3-12B                  | 43.5 |  31.3   |  68.3   |   53.3    |  60.9   |  43.8   |   34.8    |  27.5   |  28.2   |    0.9     |
+| YuLan-Chat-3-12B                  | 49.5 |  43.9   |  80.4   |   57.3    |  69.4   |  53.8   |   37.7    |  27.0   |  26.2   |    0.9     |
 
 ## Usage
 
@@ -142,20 +150,19 @@ python3 apply_delta.py \
 
 As our model is trained based on LLaMA, it can be loaded in the same way as original LLaMA.
 
-> 由于我们的模型是基于LLaMA开发的，可以使用与LLaMA相同的方法加载。
+> 由于我们的模型与LLaMA具有相似的结构，可以使用与LLaMA相同的方法加载。
 
 ```Python
->>> from transformers import LlamaTokenizer, LlamaForCausalLM
->>> tokenizer = LlamaTokenizer.from_pretrained("yulan-team/YuLan-Chat-2-13b")
->>> model = LlamaForCausalLM.from_pretrained("yulan-team/YuLan-Chat-2-13b").cuda()
+>>> from transformers import AutoTokenizer, AutoModelForCausalLM
+>>> tokenizer = AutoTokenizer.from_pretrained("yulan-team/YuLan-Chat-3-12b")
+>>> model = AutoModelForCausalLM.from_pretrained("yulan-team/YuLan-Chat-3-12b").cuda()
 >>> model = model.eval()
 >>> input_text = "hello"
 >>> prompt = "The following is a conversation between a human and an AI assistant namely YuLan, developed by GSAI, Renmin University of China. The AI assistant gives helpful, detailed, and polite answers to the user's questions.\n[|Human|]:{}\n[|AI|]:".format(input_text)
->>> inputs = tokenizer(prompt, return_tensors='pt', padding="longest", max_length=8192, truncation=True, return_attention_mask=True, add_special_tokens=True)
->>> kwargs = {'temperature': 0.8, 'top_p': 0.95, "top_k": 50, "repetition_penalty": 1.1, "no_repeat_ngram_size": 64, "max_length": 8192, "pad_token_id": tokenizer.bos_token_id, "eos_token_id": tokenizer.eos_token_id}
+>>> inputs = tokenizer(prompt, return_tensors='pt', padding="longest", max_length=4096, truncation=True, return_attention_mask=True, add_special_tokens=True)
+>>> kwargs = {'temperature': 0.8, 'top_p': 0.95, "top_k": 50, "repetition_penalty": 1.1, "no_repeat_ngram_size": 64, "max_length": 4096, "pad_token_id": tokenizer.bos_token_id, "eos_token_id": tokenizer.eos_token_id}
 >>> outputs = model.generate(inputs['input_ids'].to(model.device), attention_mask=inputs['attention_mask'].to(model.device), do_sample=True, **kwargs)
 >>> print(tokenizer.batch_decode(outputs, skip_special_tokens=True)[len(prompt):])
-Hello! How can I assist you today?
 ```
 
 ### Inference in Command Line
@@ -197,15 +204,56 @@ Please kindly cite our work if it helps you.
 > 如果我们的项目对您有帮助，请引用我们，谢谢！
 
 ```BibTeX
-@misc{YuLan-Chat,
-  author = {YuLan-Team},
-  title = {YuLan-Chat: An Open-Source Bilingual Chatbot},
-  year = {2023},
-  publisher = {GitHub},
-  journal = {GitHub repository},
-  howpublished = {\url{https://github.com/RUC-GSAI/YuLan-Chat}},
+@article{yulan,
+  author       = {Yutao Zhu and 
+                  Kun Zhou and 
+                  Kelong Mao and 
+                  Wentong Chen and 
+                  Yiding Sun and 
+                  Zhipeng Chen and 
+                  Qian Cao and 
+                  Yihan Wu and 
+                  Yushuo Chen and 
+                  Feng Wang and 
+                  Lei Zhang and 
+                  Junyi Li and 
+                  Xiaolei Wang and 
+                  Lei Wang and 
+                  Beichen Zhang and 
+                  Zican Dong and 
+                  Xiaoxue Cheng and 
+                  Yuhan Chen and 
+                  Xinyu Tang and 
+                  Yupeng Hou and 
+                  Qiangqiang Ren and 
+                  Xincheng Pang and 
+                  Shufang Xie and 
+                  Wayne Xin Zhao and 
+                  Zhicheng Dou and 
+                  Jiaxin Mao and 
+                  Yankai Lin and 
+                  Ruihua Song and 
+                  Jun Xu and 
+                  Xu Chen and 
+                  Rui Yan and 
+                  Zhewei Wei and 
+                  Di Hu and 
+                  Wenbing Huang and 
+                  Ze-Feng Gao and 
+                  Yueguo Chen and 
+                  Weizheng Lu and 
+                  Ji-Rong Wen},
+  title        = {YuLan: An Open-source Large Language Model},
+  journal      = {CoRR},
+  volume       = {abs/2406.19853},
+  year         = {2024},
+  url          = {https://doi.org/10.48550/arXiv.2406.19853},
+  doi          = {10.48550/ARXIV.2406.19853},
+  eprinttype    = {arXiv},
+  eprint       = {2406.19853}
 }
 ```
+
 
 ## YuLan-1
 
