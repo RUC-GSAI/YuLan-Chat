@@ -20,6 +20,7 @@ YuLan-Chat models are chat-based large language models, which are developed by t
 
 ## News
 
+* **\[Dec. 25, 2024\]** We release **YuLan-Mini**, a highly capable 2.4B lightweight LLM using only 1T pre-training data. See more [details](https://github.com/RUC-GSAI/YuLan-Mini).
 * **\[July. 1, 2024\]** We release **YuLan-Base-12B**, an LLM trained from scratch, and its chat-based version **YuLan-Chat-3-12B**. We pre-train the base model on over 1.6TB tokens of English, Chinese, and multilingual data, and then perform supervised fine-tuning via curriculum learning with high-quality English and Chinese instructions and human preference data to obtain the chat model. 
 * **\[Aug. 18, 2023\]** Our **YuLan-Chat-2-13B** achieves the 5th position of [OpenCompass](https://opencompass.org.cn/leaderboard-llm) benchmark!
 * **\[Aug. 02, 2023\]** We release **YuLan-LLaMA-2-13B** and **YuLan-Chat-2-13B**. Both models have been continually pre-trained on English and Chinese corpus based on LLaMA-2, and YuLan-Chat-2-13B is the chat-based LLM based on YuLan-LLaMA-2-13B, with high-quality English and Chinese instructions.
